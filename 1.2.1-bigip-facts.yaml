@@ -10,6 +10,7 @@
         gather_subset:
           - system-info
           - virtual-servers
+          - ltm-pools
         provider:
           server: "{{ ansible_host }}"
           user: "{{ f5_username }}"
@@ -24,5 +25,20 @@
 
     - name: Display virtual servers
       debug:
+        var: device_facts['virtual_servers'][0]['destination_address']
+    
+    - name:  display all virtual server info
+      debug:
         var: device_facts['virtual_servers']
+
+    - name: display ltm pool info
+      debug:
+        var: device_facts['ltm_pools']
+
+    - name:  generate report
+      template:
+        src=report.j2
+        dest=./{{ inventory_hostname }}.report.csv
+      delegate_to: localhost
+
 ...
