@@ -2,8 +2,8 @@
 f5
 
 [f5]
-siduser201.f5.mysidlabs.com private_ip=172.31.6.96
+siduser204.f5.mysidlabs.com private_ip=172.31.9.161
 
 [webservers]
-Web1 private_ip=172.31.19.21
-Web2 private_ip=172.31.20.204
+Web1 private_ip=172.31.19.22
+Web2 private_ip=172.31.20.205

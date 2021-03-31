@@ -9,6 +9,7 @@
       bigip_device_info:
         gather_subset:
           - system-info
+          - virtual-servers
         provider:
           server: "{{ ansible_host }}"
           user: "{{ f5_username }}"
@@ -19,5 +20,9 @@
 
     - name: DISPLAY COMPLETE BIG-IP SYSTEM INFORMATION
       debug:
-        var: device_facts
+        var: device_facts['system_info']
+
+    - name: Display virtual servers
+      debug:
+        var: device_facts['virtual_servers']
 ...
