@@ -38,7 +38,7 @@
     - name: Display virtual servers
       debug:
         var: item['destination_address']
-      loop: device_facts['virtual_servers']
+      with_item: device_facts['virtual_servers']
 
     - name:  generate report
       template:
