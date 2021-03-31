@@ -35,6 +35,11 @@
       debug:
         var: device_facts['ltm_pools']
 
+    - name: Display virtual servers
+      debug:
+        var: item['destination_address']
+      loop: device_facts['virtual_servers']
+
     - name:  generate report
       template:
         src=report.j2
