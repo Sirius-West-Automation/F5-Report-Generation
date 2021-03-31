@@ -37,13 +37,17 @@
 
     - name: Display virtual servers
       debug:
-        msg: "{{ item['destination_address'] }} port {{ item['destination_port'] }} pool name {{ item['default_pool'] }}"
+        msg: "index {{ idx }} VIP {{ item['destination_address'] }} port {{ item['destination_port'] }} pool name {{ item['default_pool'] }}"
       loop: "{{ device_facts['virtual_servers'] }}"
+      loop_control:
+        index_var: idx
       
     - name: Display virtual servers
       debug:
-        msg: "pool name {{ item['full_path'] }}"
+        msg: "index {{ idx }} pool name {{ item['full_path'] }}"
       loop: "{{ device_facts['ltm_pools'] }}"
+      loop_control:
+        index_var: idx
 
     - name:  generate report
       template:
