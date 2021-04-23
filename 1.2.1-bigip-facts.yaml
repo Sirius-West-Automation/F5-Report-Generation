@@ -42,7 +42,7 @@
     #   loop_control:
     #     index_var: idx
       
-    - name: Display virtual servers
+    - name: Display pool info
       debug:
         msg: "index {{ idx }} pool name {{ item['full_path'] }}"
       loop: "{{ device_facts['ltm_pools'] }}"
