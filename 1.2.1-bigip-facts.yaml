@@ -35,12 +35,12 @@
       debug:
         var: device_facts['ltm_pools']
 
-    - name: Display virtual servers
-      debug:
-        msg: "index {{ idx }} VIP {{ item['destination_address'] }} port {{ item['destination_port'] }} pool name {{ item['default_pool'] }}"
-      loop: "{{ device_facts['virtual_servers'] }}"
-      loop_control:
-        index_var: idx
+    # - name: Display pool
+    #   debug:
+    #     msg: "index {{ idx }} VIP {{ item['destination_address'] }} port {{ item['destination_port'] }} pool name {{ item['default_pool'] }}"
+    #   loop: "{{ device_facts['virtual_servers'] }}"
+    #   loop_control:
+    #     index_var: idx
       
     - name: Display virtual servers
       debug:
