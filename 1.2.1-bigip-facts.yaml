@@ -19,10 +19,14 @@
           validate_certs: false
       register: device_facts
 
+    - name: Get row data
+      set_fact:
+        report: "device_facts|get_report_rows"
+
     - name: Display device_facts
       debug:
-        var: device_facts
-        
+        var: report
+
     - name: DISPLAY COMPLETE BIG-IP SYSTEM INFORMATION
       debug:
         var: device_facts['system_info']
