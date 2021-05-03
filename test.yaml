@@ -1,0 +1,28 @@
+---
+- name: GRAB F5 FACTS
+  hosts: f5
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: COLLECT BIG-IP FACTS
+      bigip_device_info:
+        gather_subset:
+          - system-info
+          - virtual-servers
+          - ltm-pools
+        provider:
+          server: "{{ ansible_host }}"
+          user: "{{ f5_username }}"
+          password: "{{ f5_password }}"
+          server_port: 8443
+          validate_certs: false
+      register: device_facts
+
+    - name: Get row data
+      set_fact:
+        report: "device_facts|get_report_rows"
+
+    - name: Display device_facts
+      debug:
+        var: report
