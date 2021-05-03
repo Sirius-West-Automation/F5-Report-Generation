@@ -21,7 +21,7 @@
 
     - name: Get row data
       set_fact:
-        report: "device_facts|get_report_rows"
+        report: "{{device_facts|get_report_rows}}"
 
     - name: Display device_facts
       debug:

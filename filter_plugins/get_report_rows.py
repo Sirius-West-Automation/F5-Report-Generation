@@ -1,7 +1,7 @@
 def extract_device_facts(device_facts):
     row = {}
     rows = []
-    return device_facts.keys
+    return device_facts.keys()
 
 
 

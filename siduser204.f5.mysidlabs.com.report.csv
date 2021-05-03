@@ -1,2 +1,0 @@
-LTM Appliance,Virtual_Server,Virtual_Server_IP,Port,Virtual_Server_Description,Enabled,Availability_Status,Status_Reason,Healthcheck_Type,Pool
-siduser204.f5.mysidlabs.com,service,172.31.9.160,443,A1,yes,offline,The children pool member(s) are down,['/Common/http'],pool
