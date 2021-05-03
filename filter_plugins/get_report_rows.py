@@ -11,4 +11,4 @@ class FilterModule(object):
     }
 
     def filters(self):
-        return data
+        return self.filter_map
