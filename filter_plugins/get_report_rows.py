@@ -3,8 +3,6 @@ def get_monitors_for_server(server_name):
 
 def extract_device_facts(device_facts):
     rows = []
-    #pools = device_facts['ltm_pools']['members']
-    #monitors = get_monitors_for_server(server_name)
     ltm_pools = device_facts['ltm_pools']
 
 
