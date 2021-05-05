@@ -1,14 +1,30 @@
+from ansible.utils.display import Display
+import json
+
+display = Display()
+
 def get_monitors_for_server(server_name):
     return ""
 
 def extract_device_facts(device_facts):
+
+    display.v("Testing writing to the console...")
+
     rows = []
     ltm_pools = device_facts['ltm_pools']
 
+    virtual_servers = device_facts["virtual_servers"]
 
-    for vs in device_facts['virtual_servers']:
+    for vs in virtual_servers:
+        #json_vs = json.dumps(vs, indent=2)
+        #display.v(json_vs)
+
         row = {}
-        default_pool = vs['default_pool']
+        try:
+            default_pool = vs["default_pool"]
+            display.v(default_pool)
+        except:
+            display.v("Virtualserver does not contain default_pool")
 
         row["server_name"] = vs['name']
         row["destination_address"] = vs['destination_address']

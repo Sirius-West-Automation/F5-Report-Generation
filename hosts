@@ -2,7 +2,7 @@
 f5
 
 [f5]
-ec2-18-116-67-119.us-east-2.compute.amazonaws.com private_ip=172.31.5.35
+ec2-3-12-74-63.us-east-2.compute.amazonaws.com private_ip=172.31.12.115
 
 [webservers]
 Web1 private_ip=172.31.19.22
