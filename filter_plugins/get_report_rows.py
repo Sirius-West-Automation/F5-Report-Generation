@@ -22,9 +22,8 @@ def extract_device_facts(device_facts):
         row = {}
         try:
             default_pool = vs["default_pool"]
-            display.v(default_pool)
         except:
-            display.v("Virtualserver does not contain default_pool")
+            default_pool = "undefined"
 
         row["server_name"] = vs['name']
         row["destination_address"] = vs['destination_address']

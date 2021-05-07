@@ -26,3 +26,10 @@
     - name: Display device_facts
       debug:
         var: report
+    
+    - name: Generate Report
+      template:
+        src=report2.j2
+        dest=./{{ inventory_hostname }}.report2.csv
+      delegate_to: localhost
+

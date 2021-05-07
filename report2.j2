@@ -1,0 +1,4 @@
+LTM Appliance,Virtual_Server,Virtual_Server_IP,Port,Virtual_Server_Description,Enabled,Availability_Status,Status_Reason,Healthcheck_Type,Pool
+{% for row in report %}
+{{ inventory_hostname }},{{ row['server_name'] }},{{ row['destination_address'] }},{{ row['destination_port'] }},{{ row['description'] }},{{ row['enabled'] }},{{ row['availability_status']  }},{{ row['status_reason'] }},{{ row['monitor'] }},{{ row['pool_name'] }}
+{% endfor %}
