@@ -25,6 +25,8 @@ def extract_device_facts(device_facts):
         except:
             default_pool = "undefined"
 
+        display.v(default_pool)
+        
         row["server_name"] = vs['name']
         row["destination_address"] = vs['destination_address']
         row["destination_port"] = vs['destination_port']
