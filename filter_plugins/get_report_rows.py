@@ -30,7 +30,10 @@ def extract_device_facts(device_facts):
         row["server_name"] = vs['name']
         row["destination_address"] = vs['destination_address']
         row["destination_port"] = vs['destination_port']
-        row["description"] = vs['description']
+        try:
+            row["description"] = vs['description']
+        except:
+            row["description"] = "undefined"
         row["enabled"] = vs['enabled']
         row["availability_status"] = vs['availability_status']
         row["status_reason"] = vs['status_reason']
