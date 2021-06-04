@@ -1,9 +1,0 @@
-=================
-F5 password setup
-=================
-1. Login to Jump
-2. ssh -i ~/.ssh/network-key.pem admin@siduserXXX.f5.mysidlabs.com
-3. modify auth password admin
-4. password: Mys1dlabspw!
-5. save sys config
-6. quit
