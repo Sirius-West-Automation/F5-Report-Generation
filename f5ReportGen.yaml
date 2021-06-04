@@ -32,4 +32,5 @@
         src=report2.j2
         dest=./test.report2.csv
       delegate_to: localhost
+...
 
